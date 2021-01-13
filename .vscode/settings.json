@@ -19,10 +19,5 @@
   "files.associations": {
     "mre.h": "c"
   },
-  "cSpell.words": [
-    "aererr",
-    "coef",
-    "deinitializing",
-    "keybind"
-  ]
+  "cSpell.words": []
 }
