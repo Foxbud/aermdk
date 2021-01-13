@@ -1,7 +1,7 @@
 {
   // MDK settings.
   "mdk": {
-    "modName": "balloons",
+    "modName": "",
     // Make sure to surround each mod name with escaped double quotes.
     "launchMods": [
       "\"${config:mdk.modName}\"",
