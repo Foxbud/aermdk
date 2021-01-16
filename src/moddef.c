@@ -1,7 +1,5 @@
-#include <stddef.h>
-
-#include "export.h"
 #include "moddef.h"
+#include "export.h"
 
 /* ----- PUBLIC FUNCTIONS ----- */
 
