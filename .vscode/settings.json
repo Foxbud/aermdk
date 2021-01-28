@@ -1,20 +1,20 @@
 {
-  // MDK settings.
-  "mdk": {
-    "modName": "",
-    // Make sure to surround each mod name with escaped double quotes.
-    "launchMods": [
-      "\"${config:mdk.modName}\"",
-    ]
-  },
-  // VSCode settings.
-  "editor.formatOnType": true,
-  "editor.formatOnSave": true,
-  "editor.formatOnPaste": false,
-  "editor.detectIndentation": false,
-  "editor.tabSize": 2,
-  "C_Cpp.clang_format_sortIncludes": true,
-  "C_Cpp.default.compilerPath": "/usr/bin/gcc",
-  "C_Cpp.default.intelliSenseMode": "gcc-x86",
-  "C_Cpp.loggingLevel": "Warning"
+    // MDK settings.
+    "mdk": {
+        "modName": "",
+        // Make sure to surround each mod name with escaped double quotes.
+        "launchMods": [
+            "\"${config:mdk.modName}\"",
+        ]
+    },
+    // VSCode settings.
+    "editor.formatOnType": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": false,
+    "editor.detectIndentation": false,
+    "editor.tabSize": 4,
+    "C_Cpp.clang_format_sortIncludes": true,
+    "C_Cpp.default.compilerPath": "/usr/bin/gcc",
+    "C_Cpp.default.intelliSenseMode": "gcc-x86",
+    "C_Cpp.loggingLevel": "Warning"
 }

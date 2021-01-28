@@ -4,7 +4,7 @@
 /* ----- PUBLIC FUNCTIONS ----- */
 
 MOD_EXPORT void DefineMod(AERModDef *def) {
-  (void)def;
+    (void)def;
 
-  return;
+    return;
 }
