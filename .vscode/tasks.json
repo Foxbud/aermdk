@@ -168,7 +168,7 @@
             "type": "shell",
             "command": "ln",
             "args": [
-                "-sf",
+                "-sfT",
                 "${workspaceRoot}/assets",
                 "${env:AER_GAMEDIR}/assets/mod/${config:mdk.modName}"
             ],
