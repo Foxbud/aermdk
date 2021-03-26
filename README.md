@@ -55,7 +55,7 @@ Note that your mod's name **must** consist **only** of lowercase ASCII alphabeti
 
 Then enter the same name into `.vscode/settings.json`:
 
-```json
+```
 // MDK settings.
 "mdk": {
     // Name of this mod.
