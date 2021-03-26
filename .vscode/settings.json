@@ -1,14 +1,13 @@
 {
     // MDK settings.
     "mdk": {
+        // Name of this mod.
         "modName": "",
-        // Make sure to surround each mod name with escaped double quotes.
-        "launchMods": [
-            "\"${config:mdk.modName}\"",
-        ]
+        // Names of all extra mods to launch when debugging (must be installed).
+        "extraModNames": []
     },
     // VSCode settings.
-    "editor.formatOnType": true,
+    "editor.formatOnType": false,
     "editor.formatOnSave": true,
     "editor.formatOnPaste": false,
     "editor.detectIndentation": false,
@@ -20,5 +19,8 @@
     "files.associations": {
         "*.h": "c",
     },
-    "C_Cpp.autoAddFileAssociations": false
+    "C_Cpp.autoAddFileAssociations": false,
+    "cSpell.words": [
+        "aererr"
+    ]
 }
