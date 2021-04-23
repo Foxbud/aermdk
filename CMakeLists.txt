@@ -72,19 +72,23 @@ install(TARGETS
     ${MOD_NAME} LIBRARY)
 install(FILES
     "${CMAKE_CURRENT_SOURCE_DIR}/ModInfo.json"
-    DESTINATION ".")
+    DESTINATION "."
+)
 if (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE.txt")
     install(FILES
         "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE.txt"
-        DESTINATION ".")
+        DESTINATION "."
+    )
 endif()
 if (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/assets")
     install(DIRECTORY
         "${CMAKE_CURRENT_SOURCE_DIR}/assets"
-        DESTINATION ".")
+        DESTINATION "."
+    )
 endif()
 if (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/ACKNOWLEGMENTS")
     install(DIRECTORY
         "${CMAKE_CURRENT_SOURCE_DIR}/ACKNOWLEGMENTS"
-        DESTINATION ".")
+        DESTINATION "."
+    )
 endif()
