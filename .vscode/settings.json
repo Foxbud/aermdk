@@ -16,10 +16,14 @@
     "C_Cpp.default.compilerPath": "/usr/bin/gcc",
     "C_Cpp.default.intelliSenseMode": "gcc-x86",
     "C_Cpp.loggingLevel": "Warning",
+    "C_Cpp.autoAddFileAssociations": false,
     "files.associations": {
         "*.h": "c",
+        "*.toml.in": "toml",
     },
-    "C_Cpp.autoAddFileAssociations": false,
+    "[toml]": {
+        "editor.formatOnSave": false,
+    },
     "cSpell.words": [
         "aer",
         "aererr",
@@ -27,6 +31,6 @@
         "aermdk",
         "gamedir",
         "moddef",
-        "modpack"
-    ]
+        "modpack",
+    ],
 }
