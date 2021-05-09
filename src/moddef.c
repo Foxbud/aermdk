@@ -3,7 +3,7 @@
 
 /* ----- PUBLIC FUNCTIONS ----- */
 
-MOD_EXPORT void DefineMod(AERModDef *def) {
+MOD_EXPORT void DefineMod(AERModDef* def) {
     (void)def;
 
     return;
