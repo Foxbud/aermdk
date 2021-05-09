@@ -1,40 +1,29 @@
-cmake_minimum_required(VERSION 3.19)
+cmake_minimum_required(VERSION 3.12)
+
+# Define project.
+project(         "" # Mod name (required)
+    VERSION      "0.1.0" # Mod version (required)
+    DESCRIPTION  "" # Mod description (optional)
+    HOMEPAGE_URL "" # Mod homepage (optional)
+    LANGUAGES C
+)
 
 # Update this as you add new source files.
 set(SRC
     src/moddef.c
 )
 
-# Read project metadata from ModInfo.json.
-file(READ "${CMAKE_CURRENT_SOURCE_DIR}/ModInfo.json" MOD_INFO)
-string(JSON MOD_NAME
-    GET ${MOD_INFO} name
-)
-string(JSON MOD_VERSION
-    GET ${MOD_INFO} version
-)
-string(JSON MOD_DESCRIPTION
-    GET ${MOD_INFO} description
-)
-
-# Define project.
-project(${MOD_NAME}
-    VERSION ${MOD_VERSION}
-    DESCRIPTION ${MOD_DESCRIPTION}
-    LANGUAGES C
-)
-
 # Set cmake defaults.
 set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
 if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
-    set(CMAKE_INSTALL_PREFIX "lib${MOD_NAME}-${MOD_VERSION}"
+    set(CMAKE_INSTALL_PREFIX "lib${PROJECT_NAME}-${PROJECT_VERSION}"
         CACHE PATH "..." FORCE
     )
 endif()
 
 # Include CPack.
 set(CPACK_GENERATOR "TXZ")
-set(CPACK_PACKAGE_FILE_NAME "lib${MOD_NAME}-${MOD_VERSION}")
+set(CPACK_PACKAGE_FILE_NAME "lib${PROJECT_NAME}-${PROJECT_VERSION}")
 include(CPack)
 
 # Include GenerateExportHeader.
@@ -44,34 +33,39 @@ include(GenerateExportHeader)
 set(AERMRE_SCRIPT_REL "aer/mre/lib/cmake/AERMRETargets.cmake")
 include("$ENV{AER_GAMEDIR}/${AERMRE_SCRIPT_REL}")
 
+# Instantiate ModInfo template.
+configure_file(
+    "${CMAKE_CURRENT_SOURCE_DIR}/ModInfo.json.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/ModInfo.json" @ONLY)
+
 # Add mod shared library target.
-add_library(${MOD_NAME} SHARED ${SRC})
-generate_export_header(${MOD_NAME}
+add_library(${PROJECT_NAME} SHARED ${SRC})
+generate_export_header(${PROJECT_NAME}
     BASE_NAME MOD
     EXPORT_FILE_NAME include/export.h
 )
-set_target_properties(${MOD_NAME} PROPERTIES
+set_target_properties(${PROJECT_NAME} PROPERTIES
     C_VISIBILITY_PRESET hidden
     CMAKE_VISIBILITY_INLINES_HIDDEN TRUE
 )
-target_include_directories(${MOD_NAME}
+target_include_directories(${PROJECT_NAME}
     PRIVATE include "${CMAKE_CURRENT_BINARY_DIR}/include"
 )
-target_compile_options(${MOD_NAME}
+target_compile_options(${PROJECT_NAME}
     PRIVATE -m32 -Wall -Wextra -Werror -Wfatal-errors
 )
-target_link_options(${MOD_NAME}
+target_link_options(${PROJECT_NAME}
     PRIVATE -m32 -rdynamic
 )
-target_link_libraries(${MOD_NAME}
+target_link_libraries(${PROJECT_NAME}
     PRIVATE AERMRE::aermre
 )
 
 # Add installation target.
 install(TARGETS
-    ${MOD_NAME} LIBRARY)
+    ${PROJECT_NAME} LIBRARY)
 install(FILES
-    "${CMAKE_CURRENT_SOURCE_DIR}/ModInfo.json"
+    "${CMAKE_CURRENT_BINARY_DIR}/ModInfo.json"
     DESTINATION "."
 )
 if (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE.txt")

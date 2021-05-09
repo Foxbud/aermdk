@@ -19,6 +19,7 @@
     "C_Cpp.autoAddFileAssociations": false,
     "files.associations": {
         "*.h": "c",
+        "*.json.in": "json",
         "*.toml.in": "toml",
     },
     "[toml]": {
