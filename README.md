@@ -34,15 +34,27 @@ code ./aermdk-20210326/
 
 Install the recommended VS Code extensions specified in the file `.vscode/extensions.json`. If you use the open-source version of VS Code, you may need to manually download some of them from the [marketplace](https://marketplace.visualstudio.com/VSCode).
 
-Next, enter your mod's information in the file `ModInfo.json`:
+Next, enter your mod's information in the file `CMakeLists.txt`:
+
+```cmake
+# Define project.
+project(         "my_mod"
+    VERSION      "0.1.0"
+    DESCRIPTION  "Mod that logs a message to the console."
+    HOMEPAGE_URL "http://example.com"
+    LANGUAGES C
+)
+```
+
+and in the file `ModInfo.json.in`:
 
 ```json
 {
-    "name": "my_mod",
-    "version": "0.1.0",
+    "name": "@PROJECT_NAME@",
+    "version": "@PROJECT_VERSION@",
+    "description": "@PROJECT_DESCRIPTION@",
+    "homepage": "@PROJECT_HOMEPAGE_URL@",
     "minimum_mre_version": "1.0.0",
-    "description": "Mod that logs a message to the console.",
-    "homepage": "(optional)",
     "authors": [
         "Drifter",
         "Alt Drifter"

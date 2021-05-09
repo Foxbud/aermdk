@@ -30,8 +30,12 @@
         "aererr",
         "aerman",
         "aermdk",
+        "build",
+        "cmake",
+        "dcmake",
         "gamedir",
         "moddef",
         "modpack",
+        "type"
     ],
 }
