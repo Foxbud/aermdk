@@ -44,23 +44,13 @@ project(         "my_mod"
     HOMEPAGE_URL "http://example.com"
     LANGUAGES C
 )
-```
-
-and in the file `ModInfo.json.in`:
-
-```json
-{
-    "name": "@PROJECT_NAME@",
-    "version": "@PROJECT_VERSION@",
-    "description": "@PROJECT_DESCRIPTION@",
-    "homepage": "@PROJECT_HOMEPAGE_URL@",
-    "minimum_mre_version": "1.0.0",
-    "authors": [
-        "Drifter",
-        "Alt Drifter"
-    ],
-    "configuration": []
-}
+set(PROJECT_MINIMUM_MRE_VERSION
+    "1.0.0"
+)
+set(PROJECT_AUTHORS
+    "Drifter"
+    "Alt Drifter"
+)
 ```
 
 Note that your mod's name **must** consist **only** of lowercase ASCII alphabetic letters, numbers, and underscores. Using any other characters will likely result in issues that are difficult to debug.

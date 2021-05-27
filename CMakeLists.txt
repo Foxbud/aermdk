@@ -7,11 +7,20 @@ project(         "" # Mod name (required)
     HOMEPAGE_URL "" # Mod homepage (optional)
     LANGUAGES C
 )
+set(PROJECT_MINIMUM_MRE_VERSION # Mod minimum MRE version (optional)
+    ""
+)
+set(PROJECT_AUTHORS # List of mod authors (optional)
+    ""
+)
 
 # Update this as you add new source files.
 set(SRC
     src/moddef.c
 )
+
+# Prepare mod information for inclusion in ModInfo.json.
+list(JOIN PROJECT_AUTHORS "\",\"" PROJECT_AUTHORS_JSON)
 
 # Set cmake defaults.
 set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
