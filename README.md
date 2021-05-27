@@ -19,7 +19,7 @@ The **AER MDK** is a starter template for creating new modifications (mods) for 
 - `AER_GAMEDIR` environment variable that points to the root of the HLD installation.
 - Recent versions of the AER [executable patch](https://github.com/Foxbud/aerpatch/releases/latest) and [mod runtime environment](https://github.com/Foxbud/libaermre/releases/latest) (use [aerman](https://github.com/Foxbud/aerman/releases/latest) to install them).
 - A recent version of either [GCC](https://gcc.gnu.org/) or [Clang](https://clang.llvm.org/).
-- [CMake](https://cmake.org/) v3.19 or greater.
+- [CMake](https://cmake.org/) v3.12 or greater.
 - A recent version of the [GNU Project Debugger (gdb)](https://www.gnu.org/software/gdb/).
 - [Visual Studio Code](https://code.visualstudio.com/) (either open-source or proprietary).
 
@@ -131,7 +131,7 @@ static void RoomChangeListener(int32_t newRoomIdx, int32_t prevRoomIdx) {
 
 /* ----- PUBLIC FUNCTIONS ----- */
 
-MOD_EXPORT void DefineMod(AERModDef *def) {
+MOD_EXPORT void DefineMod(AERModDef* def) {
     def->roomChangeListener = RoomChangeListener;
 
     return;
