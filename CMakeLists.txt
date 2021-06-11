@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.12)
 
 # Define project.
-project(         "" # Mod name (required)
+project(         "test" # Mod name (required)
     VERSION      "0.1.0" # Mod version (required)
     DESCRIPTION  "" # Mod description (optional)
     HOMEPAGE_URL "" # Mod homepage (optional)
@@ -45,7 +45,9 @@ include("$ENV{AER_GAMEDIR}/${AERMRE_SCRIPT_REL}")
 # Instantiate ModInfo template.
 configure_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/ModInfo.json.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/ModInfo.json" @ONLY)
+    "${CMAKE_CURRENT_BINARY_DIR}/ModInfo.json"
+    @ONLY
+)
 
 # Add mod shared library target.
 add_library(${PROJECT_NAME} SHARED ${SRC})
@@ -72,7 +74,9 @@ target_link_libraries(${PROJECT_NAME}
 
 # Add installation target.
 install(TARGETS
-    ${PROJECT_NAME} LIBRARY)
+    ${PROJECT_NAME}
+    LIBRARY DESTINATION "lib"
+)
 install(FILES
     "${CMAKE_CURRENT_BINARY_DIR}/ModInfo.json"
     DESTINATION "."
