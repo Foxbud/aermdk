@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.12)
 
 # Define project.
-project(         "test" # Mod name (required)
+project(         "" # Mod name (required)
     VERSION      "0.1.0" # Mod version (required)
     DESCRIPTION  "" # Mod description (optional)
     HOMEPAGE_URL "" # Mod homepage (optional)
