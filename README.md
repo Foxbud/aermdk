@@ -18,7 +18,7 @@ The **AER MDK** is a starter template for creating new modifications (mods) for 
 - Either the [Steam](https://duckduckgo.com/?t=ffab&q=hyper+light+drifter&ia=web) or [GOG](https://www.gog.com/game/hyper_light_drifter) version of Hyper Light Drifter.
 - `AER_GAMEDIR` environment variable that points to the root of the HLD installation.
 - Recent versions of the AER [executable patch](https://github.com/Foxbud/aerpatch/releases/latest) and [mod runtime environment](https://github.com/Foxbud/libaermre/releases/latest) (use [aerman](https://github.com/Foxbud/aerman/releases/latest) to install them).
-- A recent version of either [GCC](https://gcc.gnu.org/) or [Clang](https://clang.llvm.org/).
+- A recent version of either [GCC](https://gcc.gnu.org/) or [Clang](https://clang.llvm.org/) with 32-bit support.
 - [CMake](https://cmake.org/) v3.12 or greater.
 - A recent version of the [GNU Project Debugger (gdb)](https://www.gnu.org/software/gdb/).
 - [Visual Studio Code](https://code.visualstudio.com/) (either open-source or proprietary).
@@ -57,12 +57,9 @@ Note that your mod's name **must** consist **only** of lowercase ASCII alphabeti
 
 Then enter the same name into `.vscode/settings.json`:
 
-```
-// MDK settings.
+```json
 "mdk": {
-    // Name of this mod.
     "modName": "my_mod",
-    // Names of all extra mods to launch when debugging (must be installed).
     "extraModNames": []
 },
 ```
