@@ -56,7 +56,7 @@
             "\t\tAERInstance *target,",
             "\t\tAERInstance *other",
             ") {",
-            "\tif (!event->handle(event, target, other))",
+            "\tif (!event->handle(event->next, target, other))",
             "\t\treturn false;",
             "",
             "\t${0:/* code */}",
