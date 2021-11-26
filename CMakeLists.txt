@@ -64,7 +64,7 @@ target_include_directories(${PROJECT_NAME}
     PRIVATE include "${CMAKE_CURRENT_BINARY_DIR}/include"
 )
 target_compile_options(${PROJECT_NAME}
-    PRIVATE -m32 -Wall -Wextra -Werror -Wfatal-errors
+    PRIVATE -m32 -Wall -Wextra -Werror -Wfatal-errors -Wno-error=deprecated-declarations
 )
 target_link_options(${PROJECT_NAME}
     PRIVATE -m32 -rdynamic
