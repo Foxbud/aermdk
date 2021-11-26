@@ -1,7 +1,8 @@
 {
     "mdk": {
         "modName": "",
-        "extraModNames": []
+        "extraModNames": [],
+        "version": "20211126"
     },
     "editor.formatOnType": false,
     "editor.formatOnSave": true,
