@@ -58,7 +58,7 @@ generate_export_header(${PROJECT_NAME}
 )
 set_target_properties(${PROJECT_NAME} PROPERTIES
     C_VISIBILITY_PRESET hidden
-    CMAKE_VISIBILITY_INLINES_HIDDEN TRUE
+    VISIBILITY_INLINES_HIDDEN TRUE
 )
 target_include_directories(${PROJECT_NAME}
     PRIVATE include "${CMAKE_CURRENT_BINARY_DIR}/include"
