@@ -116,7 +116,7 @@
         {
             "label": "Clean Launch",
             "type": "shell",
-            "command": "rm -rf ${workspaceRoot}/build/extralib ${env:AER_GAMEDIR}/assets/mod ${env:AER_GAMEDIR}/aer/conf.toml",
+            "command": "rm -rf \"${workspaceRoot}/build/extralib\" \"${env:AER_GAMEDIR}/assets/mod\" \"${env:AER_GAMEDIR}/aer/conf.toml\"",
             "presentation": {
                 "echo": true,
                 "reveal": "never",
