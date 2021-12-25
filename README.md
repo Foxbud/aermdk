@@ -112,14 +112,14 @@ Now edit `src/moddef.c` to look like:
 
 /* ----- PRIVATE FUNCTIONS ----- */
 
-static void RoomChangeListener(int32_t newRoomIdx, int32_t prevRoomIdx) {
+static void RoomStartListener(int32_t newRoomIdx, int32_t prevRoomIdx) {
     AERLogInfo("Switched from room %i to room %i.", prevRoomIdx, newRoomIdx);
 }
 
 /* ----- PUBLIC FUNCTIONS ----- */
 
 MOD_EXPORT void DefineMod(AERModDef* def) {
-    def->roomChangeListener = RoomChangeListener;
+    def->roomStartListener = RoomStartListener;
 
     return;
 }
