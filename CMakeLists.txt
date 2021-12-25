@@ -64,7 +64,23 @@ target_include_directories(${PROJECT_NAME}
     PRIVATE include "${CMAKE_CURRENT_BINARY_DIR}/include"
 )
 target_compile_options(${PROJECT_NAME}
-    PRIVATE -m32 -Wall -Wextra -Werror -Wfatal-errors -Wno-error=deprecated-declarations
+    PRIVATE
+        -m32
+        -Wall
+        -Wextra
+        -Werror
+        -Wfatal-errors
+        -Wno-error=deprecated-declarations
+        -Wno-error=unused-but-set-parameter
+        -Wno-error=unused-but-set-variable
+        -Wno-error=unused-function
+        -Wno-error=unused-label
+        -Wno-error=unused-local-typedefs
+        -Wno-error=unused-parameter
+        -Wno-error=unused-result
+        -Wno-error=unused-variable
+        -Wno-error=unused-const-variable
+        -Wno-error=unused-value
 )
 target_link_options(${PROJECT_NAME}
     PRIVATE -m32 -rdynamic
